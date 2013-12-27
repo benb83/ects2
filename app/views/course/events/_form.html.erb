@@ -1,0 +1,47 @@
+
+<% if @course_event.errors.any? %>
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <%= pluralize(@course_event.errors.count, "error") %> prohibited this course from being created:
+    </div>
+    <div class="panel-body">
+      <ul style="margin-bottom: 0;">
+      <% @course_event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<%= f.hidden_field :master_id %>
+
+<div class="form-group<%= @course.errors[:code].any? ? ' has-error' : nil %>">
+  <%= f.label :start_date, { :class => "col-md-2 control-label" } %>
+  <div class="col-md-3">
+    <input type="text" class="form-control" name="start_date_picker" id="start_date_picker" value="<%= @course_event.start_date.nil? ? "" : @course_event.start_date.strftime('%A %d %B %Y') %>" />
+    <%= f.hidden_field :start_date %>
+  </div>
+</div>
+<div class="form-group<%= @course.errors[:title].any? ? ' has-error' : nil %>">
+  <%= f.label :end_date, { :class => "col-md-2 control-label" } %>
+  <div class="col-md-3">
+    <input type="text" class="form-control" name="end_date_picker" id="end_date_picker" value="<%= @course_event.end_date.nil? ? "" : @course_event.end_date.strftime('%A %d %B %Y') %>" />
+    <%= f.hidden_field :end_date %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    $("#start_date_picker").datepicker({
+      dateFormat: "DD d MM yy",
+      altField: "#course_event_start_date",
+      altFormat: "yy-mm-dd"
+    });
+    $("#end_date_picker").datepicker({
+      dateFormat: "DD d MM yy",
+      altField: "#course_event_end_date",
+      altFormat: "yy-mm-dd"
+    });
+  });
+</script>

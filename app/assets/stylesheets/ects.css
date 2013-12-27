@@ -1,0 +1,193 @@
+body {
+	padding: 70px 10px 10px 10px;
+}
+
+/* cpill-none */
+.nav-pills > li.cpill-none > a,
+.nav-pills > li.cpill-none > a:focus {
+    background-color: #999999;
+    color: #FFFFFF;
+}
+
+.nav-pills > li.cpill-none > a:hover {
+	background-color: #666666;
+}
+
+.nav-pills > .cpill-none > a > .badge {
+    background-color: #FFFFFF;
+    color: #999999;
+}
+
+.nav-pills > .cpill-none > a:hover > .badge {
+    color: #666666;
+}
+
+/* cpill-low */
+.nav-pills > li.cpill-low > a,
+.nav-pills > li.cpill-low > a:focus {
+    background-color: #0033FF;
+    color: #FFFFFF;
+}
+
+.nav-pills > li.cpill-low > a:hover {
+	background-color: #0066FF;
+}
+
+.nav-pills > .cpill-low > a > .badge {
+    background-color: #FFFFFF;
+    color: #0033FF;
+}
+
+.nav-pills > .cpill-low > a:hover > .badge {
+    color: #0033FF;
+}
+
+/* cpill-high */
+.nav-pills > li.cpill-high > a,
+.nav-pills > li.cpill-high > a:focus {
+    background-color: #FF0000;
+    color: #FFFFFF;
+}
+
+.nav-pills > li.cpill-high > a:hover {
+	background-color: #FF3333;
+}
+
+.nav-pills > .cpill-high > a > .badge {
+    background-color: #FFFFFF;
+    color: #FF0000;
+}
+
+.nav-pills > .cpill-high > a:hover > .badge {
+    color: #FF0000;
+}
+
+/* cpill-ok */
+.nav-pills > li.cpill-ok > a,
+.nav-pills > li.cpill-ok > a:focus {
+    background-color: #33CC00;
+    color: #FFFFFF;
+}
+
+.nav-pills > li.cpill-ok > a:hover {
+	background-color: #66CC00;
+}
+
+.nav-pills > .cpill-ok > a > .badge {
+    background-color: #FFFFFF;
+    color: #33CC00;
+}
+
+.nav-pills > .cpill-ok > a:hover > .badge {
+    color: #66CC00;
+}
+
+.table-ects tr.title th,
+.table-ects tr.title-nohover th {
+    background: #000000;
+    color: #dddddd;
+    padding: 5px 10px !important;
+}
+
+.table-ects tr.subtitle th,
+.table-ects tr.subtitle-nohover th {
+  background: whitesmoke;
+}
+
+.table-ects tbody tr.cancelled {
+    background: #666666;
+    color: #990000;
+    cursor: pointer;
+}
+.table-ects tbody tr.success,
+.table-ects tbody tr.warning,
+.table-ects tbody tr.danger,
+.table-ects tbody tr.normal,
+.table-ects tr.title {
+    cursor: pointer;
+}
+
+.table-ects tbody tr.cancelled:hover td {
+    background: #5a5a5a;
+}
+.table-ects tbody tr.success:hover td {
+    background: rgb(208, 240, 216);
+}
+.table-ects tbody tr.warning:hover td {
+    background: rgb(250, 242, 204);
+}
+.table-ects tbody tr.danger:hover td {
+    background: rgb(235, 204, 204);
+}
+.table-ects tbody tr.normal:hover td {
+    background: #eeeeee;
+}
+.table-ects tbody tr.title:hover th {
+    color: #ffffff;
+    text-decoration: none;
+}
+.table-ects tbody tr.title:hover th small {
+    color: #ffffff;
+}
+
+
+.table-ects-title th {
+    background: #000000;
+    color: #dddddd;
+    padding: 5px 10px !important;
+}
+
+.table-ects-title a, 
+.table-ects-title a:visited {
+    color: #dddddd;
+}
+
+.table-ects-title a:active,
+.table-ects-title a:hover {
+    color: #ffffff;
+}
+
+.table-ects-subtitle th {
+  background: #dddddd;
+}
+
+.table-ects td.input {
+    padding: 0px;
+}
+
+.table-ects td.input input {
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #ffffff;
+    background: #ffffeb;
+}
+
+.table-ects td.input input:focus {
+    background: #ffffcc;
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+}
+
+hr, h3 {
+    margin: 10px 0;
+}
+
+.breadcrumb {
+    margin-bottom: 10px;
+}
+
+.form-control-static {
+    padding-top: 7px;
+    padding-bottom: 5px;
+}
+
+.alertify-logs {
+    top: 20px;
+}
+
+.form-control {
+    padding: 4px 8px;
+    height: 30px;
+}

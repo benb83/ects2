@@ -1,0 +1,31 @@
+<h3>
+  Courses
+  <span class="pull-right"><small><%= link_to '<span class="glyphicon glyphicon-plus"></span>'.html_safe, new_course_path, { :class => 'btn btn-sm btn-default', :title => "New" } %></small></span>
+</h3>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-condensed table-ects table-bordered">
+      <tbody>
+        <tr class="subtitle">
+          <th style="width: 20%;">Course Code</th>
+          <th>Title</th>
+          <th style="width: 10%;">Duration</th>
+        </tr>
+        <% if @courses.any? %>
+        <% @courses.each do |c| %>
+        <tr class="normal" data-link="<%= course_path(c.code.downcase) %>" class="title">
+          <td><%= c.code %></th>
+          <td><%= c.title %></td>
+          <td><%= c.duration_human %></td>
+        </tr>
+        <% end %>
+        <% else %>
+        <tr>
+          <td colspan="3">No courses found</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

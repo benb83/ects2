@@ -1,0 +1,61 @@
+<% if @course.errors.any? %>
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <%= pluralize(@course.errors.count, "error") %> prohibited this course from being created:
+    </div>
+    <div class="panel-body">
+      <ul style="margin-bottom: 0;">
+      <% @course.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<div class="form-group<%= @course.errors[:code].any? ? ' has-error' : nil %>">
+  <%= f.label :code, { :class => "col-md-2 control-label" } %>
+  <div class="col-md-2">
+    <%= f.text_field :code, { :class => "form-control" } %>
+  </div>
+</div>
+<div class="form-group<%= @course.errors[:title].any? ? ' has-error' : nil %>">
+  <%= f.label :title, { :class => "col-md-2 control-label" } %>
+  <div class="col-md-6">
+    <%= f.text_field :title, { :class => "form-control" } %>
+  </div>
+</div>
+<div class="form-group<%= @course.errors[:duration].any? ? ' has-error' : nil %>">
+  <%= f.label :duration, 'Duration (days)', { :class => "col-md-2 control-label" } %>
+  <div class="col-md-1">
+    <%= f.text_field :duration, { :class => "form-control" } %>
+  </div>
+</div>
+
+<div class="form-group<%= @course.errors[:min_candidate].any? || @course.errors[:max_candidate].any? ? ' has-error' : nil %>">
+  <label class="col-md-2 control-label">Candidates</label>
+  <div class="col-md-4">
+    <%= f.hidden_field :min_candidate %>
+    <%= f.hidden_field :max_candidate %>
+    <div style="margin-top: 12px;" id="candidate_slider"></div>
+  </div>
+  <div class="col-md-2">
+    <p class="form-control-static" id="candidate_slider_value">Min: <%= @course.min_candidate || "3" %>; Max: <%= @course.max_candidate || "8" %></p>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    $("#candidate_slider").slider({
+      range: true,
+      min: 0,
+      max: 16,
+      values: [<%= @course.min_candidate || 3 %>, <%= @course.max_candidate || 8 %>],
+      slide: function(event, ui) {
+        $("#candidate_slider_value").html("Min: " + ui.values[0] + "; Max: " + ui.values[1]);
+        $("#course_master_min_candidate").val(ui.values[0]);
+        $("#course_master_max_candidate").val(ui.values[1]);
+      }
+    });
+  });
+</script>

@@ -1,0 +1,14 @@
+<%= form_for @course, url: course_path, :html => { :class => "form-horizontal", :role => "form" } do |f| %>
+<h3>
+	Course Details
+	<span class="pull-right btn-group">
+		<%= f.button :submit, { :class => "btn btn-sm btn-default", :title => "Update" } do 
+			content_tag :span, nil, :class => "glyphicon glyphicon-ok"
+			end %>
+		<%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, course_path(@course.code.downcase), { :class => "btn btn-sm btn-danger", :title => "Cancel" } %>
+	</span>
+</h3>
+<hr>
+
+<%= render 'form', f: f %>
+<% end %>

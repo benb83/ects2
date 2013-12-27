@@ -1,0 +1,28 @@
+<h3>
+  Course Event
+  <span class="pull-right"><small><%= link_to '<span class="glyphicon glyphicon-pencil"></span>'.html_safe, edit_event_path(@course_event.id), { :class => 'btn btn-sm', :title => "Edit" } %></small></span>
+</h3>
+<hr>
+
+<form class="form-horizontal">
+  <div class="form-group">
+    <label class="col-md-2 control-label">Start date</label>
+    <div class="col-md-10">
+      <p class="form-control-static"><%= @course_event.start_date.strftime('%A %d %B %Y') %></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-2 control-label">End date</label>
+    <div class="col-md-10">
+      <p class="form-control-static"><%= @course_event.end_date.strftime('%A %d %B %Y') %></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-2 control-label">Instructor</label>
+    <div class="col-md-10">
+      <p class="form-control-static">&nbsp;</p>
+    </div>
+  </div>
+ </form>
+
+ <%= link_to "Candidates", event_candidate_index_path(@course_event.id) %>
