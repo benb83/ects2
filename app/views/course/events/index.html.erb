@@ -1,31 +1,6 @@
 <h3>
   Course Events
-  <span class="pull-right"><small><%= link_to '<span class="glyphicon glyphicon-plus"></span>'.html_safe, new_course_event_path(@course.code.downcase), { :class => 'btn btn-sm btn-default', :title => "New" } %></small></span>
+  <span class="pull-right"><small><%= link_to '<span class="glyphicon glyphicon-plus"></span>'.html_safe, new_course_event_path(@course.id), { :class => 'btn btn-sm btn-default', :title => "New" } %></small></span>
 </h3>
 <hr>
-<div class="row">
-  <div class="col-md-12">
-    <table class="table table-condensed table-ects table-bordered">
-      <tbody>
-        <tr class="subtitle">
-          <th style="width: 30%;">Start Date</th>
-          <th style="width: 30%;">End Date</th>
-          <th>Instructor</th>
-        </tr>
-        <% if @course_events.any? %>
-        <% @course_events.each do |c| %>
-        <tr class="normal" data-link="<%= event_path(c.id) %>">
-          <td><%= c.start_date.strftime('%A %d %B %Y') %></th>
-          <td><%= c.end_date.strftime('%A %d %B %Y') %></td>
-          <td>&nbsp;</td>
-        </tr>
-        <% end %>
-        <% else %>
-        <tr>
-          <td colspan="3"><span class="text-danger">No course events found.</span></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
+<%= render :partial => "list", :locals => { :e => @course_events } %>

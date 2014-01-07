@@ -1,6 +1,7 @@
 class Course::EventCandidatesController < ApplicationController
   before_action :set_course_event_candidate, only: [:show, :edit, :update, :destroy]
   before_action :set_course_event, only: [:index]
+  load_and_authorize_resource
 
   # GET /course/event_candidates
   # GET /course/event_candidates.json
@@ -11,6 +12,7 @@ class Course::EventCandidatesController < ApplicationController
   # GET /course/event_candidates/1
   # GET /course/event_candidates/1.json
   def show
+
   end
 
   # GET /course/event_candidates/new
@@ -43,7 +45,7 @@ class Course::EventCandidatesController < ApplicationController
   def update
     respond_to do |format|
       if @course_event_candidate.update(course_event_candidate_params)
-        format.html { redirect_to @course_event_candidate, notice: 'Event candidate was successfully updated.' }
+        format.html { redirect_to event_candidate_path(@course_event_candidate.id), notice: 'Event candidate was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -77,10 +79,15 @@ class Course::EventCandidatesController < ApplicationController
 
     def set_course_event_candidate
       @course_event_candidate = Course::EventCandidate.find(params[:id])
+      add_breadcrumb "<span class=\"glyphicon glyphicon-home\"></span>".html_safe, :root_path
+      add_breadcrumb "Course", :course_index_path    
+      add_breadcrumb @course_event_candidate.event.master.code, course_path(@course_event_candidate.event.master.code.downcase)
+      add_breadcrumb @course_event_candidate.event.start_date.strftime('%A %d %B %Y'), event_path(@course_event_candidate.event.id)
+      add_breadcrumb @course_event_candidate.candidate.master.full_name, event_candidate_path(@course_event_candidate.id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_event_candidate_params
-      params.require(:course_event_candidate).permit(:event_id, :candidate_id)
+      params.require(:course_event_candidate).permit(:event_id, :candidate_id, :cost, :cost_currency_id)
     end
 end

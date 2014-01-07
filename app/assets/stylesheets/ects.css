@@ -1,5 +1,53 @@
+@font-face {
+  font-family: 'Faster One';
+  font-style: normal;
+  font-weight: 400;
+  src: url('faster_one.eot');
+  src: local('Faster One'), local('FasterOne-Regular'), url('faster_one.eot') format('embedded-opentype'), url('faster_one.woff') format('woff');
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('alegraya400.eot');
+  src: local('Alegreya Sans'), local('AlegreyaSans-Regular'), url('alegraya400.eot') format('embedded-opentype'), url('alegraya400.woff') format('woff');
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('alegraya700.eot');
+  src: local('Alegreya Sans Bold'), local('AlegreyaSans-Bold'), url('alegraya700.eot') format('embedded-opentype'), url('alegraya700.woff') format('woff');
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('alegraya400italic.eot');
+  src: local('Alegreya Sans Italic'), local('AlegreyaSans-Italic'), url('alegraya400italic.eot') format('embedded-opentype'), url('alegraya400.woff') format('woff');
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: url('alegraya700italic.eot');
+  src: local('Alegreya Sans Bold Italic'), local('AlegreyaSans-BoldItalic'), url('alegraya700italic.eot') format('embedded-opentype'), url('alegraya700italic.woff') format('woff');
+}
+
+.navbar-brand {
+    font: normal 24px/24px 'Faster One';
+}
+.navbar-nav > li > a {
+    line-height: 24px;
+}
+
+.jumbotron h1 {
+    font-family: 'Faster One';
+}
+
 body {
 	padding: 70px 10px 10px 10px;
+    font-family: 'Alegreya Sans';
 }
 
 /* cpill-none */
@@ -99,28 +147,35 @@ body {
     color: #990000;
     cursor: pointer;
 }
-.table-ects tbody tr.success,
-.table-ects tbody tr.warning,
-.table-ects tbody tr.danger,
+
 .table-ects tbody tr.normal,
 .table-ects tr.title {
     cursor: pointer;
 }
+.table-ects tbody tr.count-under td {
+    background: rgb(250, 219, 219);
+}
+.table-ects tbody tr.count-over td {
+    background: rgb(255, 255, 219);
+}
+.table-ects tbody tr.count-okay td {
+    background: rgb(223, 255, 231);
+}
 
+.table-ects tbody tr.normal:hover td {
+    background: rgb(245, 245, 245);
+}
 .table-ects tbody tr.cancelled:hover td {
     background: #5a5a5a;
 }
-.table-ects tbody tr.success:hover td {
+.table-ects tbody tr.count-okay:hover td {
     background: rgb(208, 240, 216);
 }
-.table-ects tbody tr.warning:hover td {
+.table-ects tbody tr.count-over:hover td {
     background: rgb(250, 242, 204);
 }
-.table-ects tbody tr.danger:hover td {
+.table-ects tbody tr.count-under:hover td {
     background: rgb(235, 204, 204);
-}
-.table-ects tbody tr.normal:hover td {
-    background: #eeeeee;
 }
 .table-ects tbody tr.title:hover th {
     color: #ffffff;

@@ -1,11 +1,12 @@
 class Person::MastersController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_person, only: [:show, :edit, :update, :destroy]
 
   add_breadcrumb "<span class=\"glyphicon glyphicon-home\"></span>".html_safe, :root_path
   add_breadcrumb "People", :people_path
 
   def index
-  	@people = Person::Master.all
+  	@people = Person::Master.paginate(:page => params[:page])
   end
 
   def show

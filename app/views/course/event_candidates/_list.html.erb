@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-condensed table-ects table-bordered" id="event_candidates">
+      <tbody>
+        <tr class="subtitle">
+          <th style="width: 15%;">Candidate ID</th>
+          <th>Name</th>
+          <% if can? :see_finance, e %>
+          <th>Sponsor</th>
+          <th style="width: 15%;">Cost</th>
+          <% end %>
+          <% if can? :delete, Course::EventCandidate %>
+          <th style="width: 32px;">&nbsp;</th>
+          <% end %>
+        </tr>
+        <% if e.any? %>
+        <% e.each do |c| %>
+        <tr class="normal" data-link="<%= event_candidate_path(c.id) %>">
+          <td><%= c.candidate.cid %></th>
+          <td><%= c.candidate.master.full_name %></td>
+          <% if can? :see_finance, e %>
+          <td>n/a</td>
+          <td><em><%= c.cost_currency.nil? ? "" : c.cost_currency.short_code << " " %></em><%= number_to_currency c.cost, unit: "" %></td>
+          <% end %>
+          <% if can? :delete, Course::EventCandidate %>
+          <td style="text-align: center;"><%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, event_candidate_path(c), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Remove' %></td>
+          <% end %>
+        </tr>
+        <% end %>
+        <% else %>
+        <tr class="no_candidates">
+          <td colspan="3"><span class="text-danger">No candidates found.</span></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

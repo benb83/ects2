@@ -1,6 +1,8 @@
 <h3>
   Course Event
+  <% if can? :edit, @course_event %>
   <span class="pull-right"><small><%= link_to '<span class="glyphicon glyphicon-pencil"></span>'.html_safe, edit_event_path(@course_event.id), { :class => 'btn btn-sm btn-default', :title => "Edit" } %></small></span>
+  <% end %>
 </h3>
 <hr>
 
@@ -25,40 +27,17 @@
   </div>
  </form>
 
+<% if can? :read, Course::EventCandidate %>
 <h3>
   Candidates
+  <% if can? :create, Course::EventCandidate %>
   <span class="pull-right"><small><button id="add-candidate-cmd" class="btn btn-sm btn-default" title="Assign Candidate"><span class="glyphicon glyphicon-plus"></span></button></small></span>
+  <% end %>
 </h3>
 <hr>
-<div class="row">
-  <div class="col-md-12">
-    <table class="table table-condensed table-ects table-bordered" id="event_candidates">
-      <tbody>
-        <tr class="subtitle">
-          <th style="width: 15%;">Candidate ID</th>
-          <th style="width: 25%;">Family Name</th>
-          <th style="width: 25%;">Given Name</th>
-          <th>Other Names</th>
-          <th style="width: 32px;">&nbsp;</th>
-        </tr>
-        <% if @course_event.candidates.any? %>
-        <% @course_event.candidates.each do |c| %>
-        <tr class="normal">
-          <td><%= c.candidate.cid %></th>
-          <td><%= c.candidate.master.family_name %></td>
-          <td><%= c.candidate.master.given_name %></td>
-          <td><%= c.candidate.master.other_names %></td>
-          <td style="text-align: center;"><%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, event_candidate_path(c), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Remove' %></td>
-        </tr>
-        <% end %>
-        <% else %>
-        <tr class="no_candidates">
-          <td colspan="5"><span class="text-danger">No candidates found.</span></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
+<%= render :partial => "/course/event_candidates/list", :locals => { :e => @course_event.candidates } %>
+<% end %>
 
+<% if can? :create, Course::EventCandidate %>
 <%= render "add_candidate" %>
+<% end %>

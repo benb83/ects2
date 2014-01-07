@@ -1,27 +1,27 @@
-<% if false %>
-<%= form_for(@course_event_candidate) do |f| %>
-  <% if @course_event_candidate.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course_event_candidate.errors.count, "error") %> prohibited this course_event_candidate from being saved:</h2>
-
-      <ul>
-      <% @course_event_candidate.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <div class="form-group">
+    <label class="col-md-2 control-label">Course</label>
+    <div class="col-md-10">
+      <p class="form-control-static"><em><%= @course_event_candidate.event.master.code %></em> <%= @course_event_candidate.event.master.title %></p>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :course_event_id %><br>
-    <%= f.number_field :course_event_id %>
   </div>
-  <div class="field">
-    <%= f.label :person_candidate_id %><br>
-    <%= f.number_field :person_candidate_id %>
+  <div class="form-group">
+    <label class="col-md-2 control-label">Event</label>
+    <div class="col-md-10">
+      <p class="form-control-static"><%= @course_event_candidate.event.start_date.strftime('%A %d %B %Y') %></p>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <label class="col-md-2 control-label">Candidate</label>
+    <div class="col-md-10">
+      <p class="form-control-static"><em><%= @course_event_candidate.candidate.cid %></em> <%= @course_event_candidate.candidate.master.full_name %></p>
+    </div>
   </div>
-<% end %>
-<% end %>
+  <div class="form-group<%= @course_event_candidate.errors[:cost].any? || @course_event_candidate.errors[:cost_currency].any? ? ' has-error' : nil %> ? ' has-error' : nil %>">
+    <%= f.label :cost, { :class => "col-md-2 control-label" } %>
+    <div class="col-md-2">
+      <%= f.select :cost_currency_id, options_from_collection_for_select( Financial::Currency.all, :id, :short_code, @course_event_candidate.cost_currency_id), {}, { :class => "form-control" } %>
+    </div>
+    <div class="col-md-2">
+      <%= f.text_field :cost, { :class => "form-control" } %>
+    </div>
+  </div>

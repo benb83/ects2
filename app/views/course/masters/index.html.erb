@@ -1,6 +1,10 @@
 <h3>
   Courses
-  <span class="pull-right"><small><%= link_to '<span class="glyphicon glyphicon-plus"></span>'.html_safe, new_course_path, { :class => 'btn btn-sm btn-default', :title => "New" } %></small></span>
+  <% if can? :create, Course::Master %>
+  <span class="pull-right">
+    <small><%= link_to '<span class="glyphicon glyphicon-plus"></span>'.html_safe, new_course_path, { :class => 'btn btn-sm btn-default', :title => "New" } %></small>
+  </span>
+  <% end %>
 </h3>
 <hr>
 <div class="row">
@@ -14,7 +18,7 @@
         </tr>
         <% if @courses.any? %>
         <% @courses.each do |c| %>
-        <tr class="normal" data-link="<%= course_path(c.code.downcase) %>" class="title">
+        <tr class="normal" data-link="<%= course_path(c.id) %>" class="title">
           <td><%= c.code %></th>
           <td><%= c.title %></td>
           <td><%= c.duration_human %></td>

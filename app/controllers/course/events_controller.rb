@@ -1,6 +1,7 @@
 class Course::EventsController < ApplicationController
   before_action :set_course_event, only: [:show, :edit, :update, :destroy]
   before_action :set_course, only: [:index, :new]
+  load_and_authorize_resource
 
   # GET /course/events
   # GET /course/events.json
@@ -15,7 +16,7 @@ class Course::EventsController < ApplicationController
 
   # GET /course/events/new
   def new
-    add_breadcrumb "New Event", new_course_event_path(@course.code.downcase)
+    add_breadcrumb "New Event", new_course_event_path(@course.id)
     @course_event = @course.course_events.build
   end
 
@@ -30,7 +31,7 @@ class Course::EventsController < ApplicationController
 
     respond_to do |format|
       if @course_event.save
-        format.html { redirect_to course_event_index_path(@course_event.master.code), notice: 'Event was successfully created.' }
+        format.html { redirect_to course_event_index_path(@course_event.master.id), notice: 'Event was successfully created.' }
         format.json { render action: 'show', status: :created, location: @course_event }
       else
         format.html { render action: 'new' }
@@ -65,11 +66,11 @@ class Course::EventsController < ApplicationController
 
   private
     def set_course
-      @course = Course::Master.find_by :code => params[:course_id].upcase
+      @course = Course::Master.find(params[:course_id])
       add_breadcrumb "<span class=\"glyphicon glyphicon-home\"></span>".html_safe, :root_path
       add_breadcrumb "Course", :course_index_path
-      add_breadcrumb @course.code, course_path(@course.code.downcase)
-      add_breadcrumb "Events", course_event_index_path(@course.code.downcase)
+      add_breadcrumb @course.code, course_path(@course.id)
+      add_breadcrumb "Events", course_event_index_path(@course.id)
     end
 
     # Use callbacks to share common setup or constraints between actions.
@@ -77,7 +78,7 @@ class Course::EventsController < ApplicationController
       @course_event = Course::Event.find(params[:id])
       add_breadcrumb "<span class=\"glyphicon glyphicon-home\"></span>".html_safe, :root_path
       add_breadcrumb "Course", :course_index_path    
-      add_breadcrumb @course_event.master.code, course_path(@course_event.master.code.downcase)
+      add_breadcrumb @course_event.master.code, course_path(@course_event.master.id)
 #      add_breadcrumb "Events", course_event_index_path(@course_event.master.code.downcase)
       add_breadcrumb @course_event.start_date.strftime('%A %d %B %Y'), event_path(@course_event.id)
     end

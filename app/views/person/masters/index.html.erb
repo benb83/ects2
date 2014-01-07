@@ -3,33 +3,4 @@
   <span class="pull-right"><small><%= link_to '<span class="glyphicon glyphicon-plus"></span>'.html_safe, new_person_path, { :class => 'btn btn-sm btn-default', :title => "New" } %></small></span>
 </h3>
 <hr>
-<div class="row">
-  <div class="col-md-12">
-    <table class="table table-condensed table-ects table-bordered">
-      <tbody>
-        <tr class="subtitle">
-          <th>Family Name</th>
-          <th>Given Name</th>
-          <th>Other Names</th>
-          <th style="width: 10%;">Candidate ID</th>
-          <th style="width: 10%;">Instructor ID</th>
-        </tr>
-        <% if @people.any? %>
-        <% @people.each do |c| %>
-        <tr class="normal" data-link="<%= person_path(c.id) %>" class="title">
-          <td><%= c.family_name %></th>
-          <td><%= c.given_name %></th>
-          <td><%= c.other_names %></th>
-          <td><%= c.candidate.nil? ? "&nbsp;".html_safe : c.candidate.cid %></td>
-          <td><%= c.instructor.nil? ? "&nbsp;".html_safe : c.instructor.cid %></td>
-        </tr>
-        <% end %>
-        <% else %>
-        <tr>
-          <td colspan="3">No people found</td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
+<%= render :partial => "list", :locals => { :e => @people } %>

@@ -27,15 +27,32 @@
           <%= namespace_link_to 'Courses', 'course' %>
          	<%= namespace_link_to 'People', 'person', '/people' %>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= current_user.person.display_name %>&nbsp;
+              <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Update Account", edit_user_registration_path %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+            </ul>
+          </li>
+        <% else %>
+          <%= namespace_link_to "Login", "devise/sessions", new_user_session_path %>
+        <% end %>
+      </ul>
       </div><!--/.nav-collapse -->
     </div>
   </div>
 
+  <% if params[:controller] != 'root' && !params[:controller].include?('devise') %>
   <div class="container">
     <div class="breadcrumb">
       <%= render_breadcrumbs %>
     </div>
   </div>
+  <% end %>
 
   <!-- Content -->
   <div class="container">
@@ -48,8 +65,12 @@
     });
     $(function() {
       var notice = '<%= notice %>';
+      var alert = '<%= alert %>';
       if(notice) {
         alertify.log(notice);
+      }
+      if(alert) {
+        alertify.error(alert);
       }
     });
   </script>

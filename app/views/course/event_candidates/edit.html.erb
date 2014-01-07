@@ -1,6 +1,14 @@
-<h1>Editing course_event_candidate</h1>
+<%= form_for @course_event_candidate, url: event_candidate_path, :html => { :class => "form-horizontal", :role => "form" } do |f| %>
+<h3>
+  Course Event Candidate
+  <span class="pull-right btn-group">
+		<%= f.button :submit, { :class => "btn btn-sm btn-default", :title => "Create" } do 
+			content_tag :span, nil, :class => "glyphicon glyphicon-ok"
+			end %>
+		<%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, event_candidate_path(@course_event_candidate.id), { :class => "btn btn-sm btn-danger", :title => "Cancel" } %>
+  </span>
+</h3>
+<hr>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @course_event_candidate %> |
-<%= link_to 'Back', course_event_candidates_path %>
+<%= render 'form', :f => f %>
+<% end %>

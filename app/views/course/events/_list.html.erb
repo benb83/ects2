@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-condensed table-ects table-bordered">
+      <tbody>
+        <tr class="subtitle">
+          <th style="width: 25%;">Start Date</th>
+          <th style="width: 25%;">End Date</th>
+          <th>Instructor</th>
+          <th style="width: 10%;">Candidates</th>
+        </tr>
+        <% if e.any? %>
+        <% e.each do |c| %>
+        <tr class="normal <%= c.row_class %>" data-link="<%= event_path(c.id) %>">
+          <td><%= c.start_date.strftime('%A %d %B %Y') %></th>
+          <td><%= c.end_date.strftime('%A %d %B %Y') %></td>
+          <td><%= c.instructor.nil? ? "TBC" : "<em>#{c.instructor.cid}</em> #{c.instructor.master.display_name}".html_safe %></td>
+          <td><%= c.candidates.any? ? c.candidates.count : "0" %></td>
+        </tr>
+        <% end %>
+        <% else %>
+        <tr>
+          <td colspan="3"><span class="text-danger">No course events found.</span></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

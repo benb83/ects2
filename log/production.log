@@ -407,3 +407,500 @@ ActionController::RoutingError (No route matches [GET] "/assets/application-5069
   bin/rails:4:in `<main>'
 
 
+I, [2014-01-07T13:15:09.604825 #7556]  INFO -- : Started GET "/" for 172.16.6.120 at 2014-01-07 13:15:09 +0000
+I, [2014-01-07T13:15:09.630218 #7556]  INFO -- : Processing by RootController#index as HTML
+I, [2014-01-07T13:15:09.658585 #7556]  INFO -- :   Rendered root/index.html.erb within layouts/application (0.9ms)
+I, [2014-01-07T13:15:09.662728 #7556]  INFO -- : Completed 200 OK in 32ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T13:15:53.475841 #7556]  INFO -- : Started GET "/" for 172.16.6.120 at 2014-01-07 13:15:53 +0000
+I, [2014-01-07T13:15:53.478260 #7556]  INFO -- : Processing by RootController#index as HTML
+I, [2014-01-07T13:15:53.480111 #7556]  INFO -- :   Rendered root/index.html.erb within layouts/application (0.1ms)
+I, [2014-01-07T13:15:53.481973 #7556]  INFO -- : Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T13:15:56.607712 #7556]  INFO -- : Started GET "/" for 172.16.6.120 at 2014-01-07 13:15:56 +0000
+I, [2014-01-07T13:15:56.608755 #7556]  INFO -- : Processing by RootController#index as HTML
+I, [2014-01-07T13:15:56.609992 #7556]  INFO -- :   Rendered root/index.html.erb within layouts/application (0.1ms)
+I, [2014-01-07T13:15:56.611826 #7556]  INFO -- : Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T13:17:17.452918 #7556]  INFO -- : Started GET "/" for 172.16.6.120 at 2014-01-07 13:17:17 +0000
+I, [2014-01-07T13:17:17.453941 #7556]  INFO -- : Processing by RootController#index as HTML
+I, [2014-01-07T13:17:17.455145 #7556]  INFO -- :   Rendered root/index.html.erb within layouts/application (0.1ms)
+I, [2014-01-07T13:17:17.456565 #7556]  INFO -- : Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T13:41:01.925159 #7556]  INFO -- : Started GET "/" for 172.16.6.120 at 2014-01-07 13:41:01 +0000
+I, [2014-01-07T13:41:01.926164 #7556]  INFO -- : Processing by RootController#index as HTML
+I, [2014-01-07T13:41:01.927364 #7556]  INFO -- :   Rendered root/index.html.erb within layouts/application (0.1ms)
+I, [2014-01-07T13:41:01.928722 #7556]  INFO -- : Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T13:41:03.426291 #7556]  INFO -- : Started GET "/" for 172.16.6.120 at 2014-01-07 13:41:03 +0000
+I, [2014-01-07T13:41:03.427872 #7556]  INFO -- : Processing by RootController#index as HTML
+I, [2014-01-07T13:41:03.429608 #7556]  INFO -- :   Rendered root/index.html.erb within layouts/application (0.1ms)
+I, [2014-01-07T13:41:03.431466 #7556]  INFO -- : Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T13:41:20.657596 #8404]  INFO -- : Started GET "/" for 172.16.6.120 at 2014-01-07 13:41:20 +0000
+I, [2014-01-07T13:41:20.689184 #8404]  INFO -- : Processing by RootController#index as HTML
+I, [2014-01-07T13:41:20.718156 #8404]  INFO -- :   Rendered root/index.html.erb within layouts/application (0.9ms)
+I, [2014-01-07T13:41:20.734283 #8404]  INFO -- : Completed 200 OK in 45ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T13:41:22.664482 #8404]  INFO -- : Started GET "/users/sign_in" for 172.16.6.120 at 2014-01-07 13:41:22 +0000
+I, [2014-01-07T13:41:22.667951 #8404]  INFO -- : Processing by Devise::SessionsController#new as HTML
+I, [2014-01-07T13:41:22.730898 #8404]  INFO -- : Completed 500 Internal Server Error in 63ms
+F, [2014-01-07T13:41:22.734930 #8404] FATAL -- : 
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  activerecord (4.0.2) lib/active_record/connection_adapters/sqlite3_adapter.rb:512:in `table_structure'
+  activerecord (4.0.2) lib/active_record/connection_adapters/sqlite3_adapter.rb:399:in `columns'
+  activerecord (4.0.2) lib/active_record/connection_adapters/schema_cache.rb:114:in `block in prepare_default_proc'
+  activerecord (4.0.2) lib/active_record/connection_adapters/schema_cache.rb:56:in `yield'
+  activerecord (4.0.2) lib/active_record/connection_adapters/schema_cache.rb:56:in `default'
+  activerecord (4.0.2) lib/active_record/connection_adapters/schema_cache.rb:56:in `columns'
+  activerecord (4.0.2) lib/active_record/model_schema.rb:208:in `columns'
+  activerecord (4.0.2) lib/active_record/model_schema.rb:249:in `column_defaults'
+  activerecord (4.0.2) lib/active_record/locking/optimistic.rb:169:in `column_defaults'
+  activerecord (4.0.2) lib/active_record/core.rb:171:in `initialize'
+  activerecord (4.0.2) lib/active_record/inheritance.rb:27:in `new'
+  activerecord (4.0.2) lib/active_record/inheritance.rb:27:in `new'
+  devise (3.2.2) app/controllers/devise/sessions_controller.rb:8:in `new'
+  actionpack (4.0.2) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.0.2) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.2) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:443:in `_run__2549373653194100590__process_action__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.2) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.2) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  activerecord (4.0.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.2) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.2) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.2) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.2) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.2) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/mapper.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__4513636556581832712__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.19) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.19) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.19) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.19) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-07T13:41:22.759011 #8404]  INFO -- : Started GET "/users/sign_in" for 172.16.6.120 at 2014-01-07 13:41:22 +0000
+I, [2014-01-07T13:41:22.761744 #8404]  INFO -- : Processing by Devise::SessionsController#new as HTML
+I, [2014-01-07T13:41:22.763989 #8404]  INFO -- : Completed 500 Internal Server Error in 2ms
+F, [2014-01-07T13:41:22.767607 #8404] FATAL -- : 
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  activerecord (4.0.2) lib/active_record/connection_adapters/sqlite3_adapter.rb:512:in `table_structure'
+  activerecord (4.0.2) lib/active_record/connection_adapters/sqlite3_adapter.rb:399:in `columns'
+  activerecord (4.0.2) lib/active_record/connection_adapters/schema_cache.rb:114:in `block in prepare_default_proc'
+  activerecord (4.0.2) lib/active_record/connection_adapters/schema_cache.rb:56:in `yield'
+  activerecord (4.0.2) lib/active_record/connection_adapters/schema_cache.rb:56:in `default'
+  activerecord (4.0.2) lib/active_record/connection_adapters/schema_cache.rb:56:in `columns'
+  activerecord (4.0.2) lib/active_record/model_schema.rb:208:in `columns'
+  activerecord (4.0.2) lib/active_record/model_schema.rb:249:in `column_defaults'
+  activerecord (4.0.2) lib/active_record/locking/optimistic.rb:169:in `column_defaults'
+  activerecord (4.0.2) lib/active_record/core.rb:171:in `initialize'
+  activerecord (4.0.2) lib/active_record/inheritance.rb:27:in `new'
+  activerecord (4.0.2) lib/active_record/inheritance.rb:27:in `new'
+  devise (3.2.2) app/controllers/devise/sessions_controller.rb:8:in `new'
+  actionpack (4.0.2) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.0.2) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.2) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:443:in `_run__2549373653194100590__process_action__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.2) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.2) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  activerecord (4.0.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.2) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.2) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.2) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.2) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.2) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/mapper.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__4513636556581832712__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.19) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.19) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.19) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.19) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-07T13:41:26.188185 #8404]  INFO -- : Started GET "/course/" for 172.16.6.120 at 2014-01-07 13:41:26 +0000
+I, [2014-01-07T13:41:26.190722 #8404]  INFO -- : Processing by Course::MastersController#index as HTML
+I, [2014-01-07T13:41:26.199466 #8404]  INFO -- :   Rendered course/masters/index.html.erb within layouts/application (3.8ms)
+I, [2014-01-07T13:41:26.199833 #8404]  INFO -- : Completed 500 Internal Server Error in 9ms
+F, [2014-01-07T13:41:26.202534 #8404] FATAL -- : 
+ActionView::Template::Error (Could not find table 'course_masters'):
+    12:           <th>Title</th>
+    13:           <th style="width: 10%;">Duration</th>
+    14:         </tr>
+    15:         <% if @courses.any? %>
+    16:         <% @courses.each do |c| %>
+    17:         <tr class="normal" data-link="<%= course_path(c.code.downcase) %>" class="title">
+    18:           <td><%= c.code %></th>
+  app/views/course/masters/index.html.erb:15:in `_app_views_course_masters_index_html_erb__134233149516733228_32795840'
+
+
+I, [2014-01-07T13:41:26.211213 #8404]  INFO -- : Started GET "/course/" for 172.16.6.120 at 2014-01-07 13:41:26 +0000
+I, [2014-01-07T13:41:26.213779 #8404]  INFO -- : Processing by Course::MastersController#index as HTML
+I, [2014-01-07T13:41:26.219316 #8404]  INFO -- :   Rendered course/masters/index.html.erb within layouts/application (3.1ms)
+I, [2014-01-07T13:41:26.219659 #8404]  INFO -- : Completed 500 Internal Server Error in 6ms
+F, [2014-01-07T13:41:26.222493 #8404] FATAL -- : 
+ActionView::Template::Error (Could not find table 'course_masters'):
+    12:           <th>Title</th>
+    13:           <th style="width: 10%;">Duration</th>
+    14:         </tr>
+    15:         <% if @courses.any? %>
+    16:         <% @courses.each do |c| %>
+    17:         <tr class="normal" data-link="<%= course_path(c.code.downcase) %>" class="title">
+    18:           <td><%= c.code %></th>
+  app/views/course/masters/index.html.erb:15:in `_app_views_course_masters_index_html_erb__134233149516733228_31961720'
+
+
+I, [2014-01-07T14:18:56.390802 #9130]  INFO -- : Started GET "/users/sign_in" for 172.16.6.120 at 2014-01-07 14:18:56 +0000
+F, [2014-01-07T14:18:56.420560 #9130] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/users/sign_in"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.19) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.19) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.19) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.19) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-07T14:18:56.436973 #9130]  INFO -- : Started GET "/users/sign_in" for 172.16.6.120 at 2014-01-07 14:18:56 +0000
+F, [2014-01-07T14:18:56.438556 #9130] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/users/sign_in"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.19) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.19) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.19) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.19) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-07T14:46:55.055167 #9952]  INFO -- : Started GET "/" for 172.16.100.24 at 2014-01-07 14:46:55 +0000
+I, [2014-01-07T14:46:55.087099 #9952]  INFO -- : Processing by RootController#index as HTML
+I, [2014-01-07T14:46:55.115610 #9952]  INFO -- :   Rendered root/index.html.erb within layouts/application (0.9ms)
+I, [2014-01-07T14:46:55.131977 #9952]  INFO -- : Completed 200 OK in 44ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T14:46:56.683004 #9952]  INFO -- : Started GET "/login" for 172.16.100.24 at 2014-01-07 14:46:56 +0000
+I, [2014-01-07T14:46:56.686195 #9952]  INFO -- : Processing by Devise::SessionsController#new as HTML
+I, [2014-01-07T14:46:56.749131 #9952]  INFO -- : Completed 500 Internal Server Error in 63ms
+F, [2014-01-07T14:46:56.753120 #9952] FATAL -- : 
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  activerecord (4.0.2) lib/active_record/connection_adapters/sqlite3_adapter.rb:512:in `table_structure'
+  activerecord (4.0.2) lib/active_record/connection_adapters/sqlite3_adapter.rb:399:in `columns'
+  activerecord (4.0.2) lib/active_record/connection_adapters/schema_cache.rb:114:in `block in prepare_default_proc'
+  activerecord (4.0.2) lib/active_record/connection_adapters/schema_cache.rb:56:in `yield'
+  activerecord (4.0.2) lib/active_record/connection_adapters/schema_cache.rb:56:in `default'
+  activerecord (4.0.2) lib/active_record/connection_adapters/schema_cache.rb:56:in `columns'
+  activerecord (4.0.2) lib/active_record/model_schema.rb:208:in `columns'
+  activerecord (4.0.2) lib/active_record/model_schema.rb:249:in `column_defaults'
+  activerecord (4.0.2) lib/active_record/locking/optimistic.rb:169:in `column_defaults'
+  activerecord (4.0.2) lib/active_record/core.rb:171:in `initialize'
+  activerecord (4.0.2) lib/active_record/inheritance.rb:27:in `new'
+  activerecord (4.0.2) lib/active_record/inheritance.rb:27:in `new'
+  devise (3.2.2) app/controllers/devise/sessions_controller.rb:8:in `new'
+  actionpack (4.0.2) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.0.2) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.2) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:443:in `_run__3587363510347688045__process_action__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.2) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.2) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  activerecord (4.0.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.2) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.2) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.2) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.2) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.2) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/mapper.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__4359586755736408694__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.19) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.19) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.19) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.19) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-07T14:49:18.387556 #10273]  INFO -- : Started GET "/login" for 172.16.100.24 at 2014-01-07 14:49:18 +0000
+I, [2014-01-07T14:49:18.484758 #10273]  INFO -- : Processing by Devise::SessionsController#new as */*
+I, [2014-01-07T14:49:18.643021 #10273]  INFO -- :   Rendered devise/shared/_links.erb (2.0ms)
+I, [2014-01-07T14:49:18.643929 #10273]  INFO -- :   Rendered devise/sessions/new.html.erb within layouts/application (87.3ms)
+I, [2014-01-07T14:49:18.648146 #10273]  INFO -- : Completed 200 OK in 163ms (Views: 95.2ms | ActiveRecord: 1.6ms)
+I, [2014-01-07T14:58:51.869318 #10678]  INFO -- : Started GET "/" for 172.16.6.120 at 2014-01-07 14:58:51 +0000
+I, [2014-01-07T14:58:51.965136 #10678]  INFO -- : Processing by RootController#index as HTML
+I, [2014-01-07T14:58:51.993501 #10678]  INFO -- :   Rendered root/index.html.erb within layouts/application (0.9ms)
+I, [2014-01-07T14:58:52.009320 #10678]  INFO -- : Completed 200 OK in 44ms (Views: 19.7ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T14:58:53.427500 #10678]  INFO -- : Started GET "/login" for 172.16.6.120 at 2014-01-07 14:58:53 +0000
+I, [2014-01-07T14:58:53.430940 #10678]  INFO -- : Processing by Devise::SessionsController#new as HTML
+I, [2014-01-07T14:58:53.554190 #10678]  INFO -- :   Rendered devise/shared/_links.erb (2.0ms)
+I, [2014-01-07T14:58:53.555011 #10678]  INFO -- :   Rendered devise/sessions/new.html.erb within layouts/application (86.7ms)
+I, [2014-01-07T14:58:53.557303 #10678]  INFO -- : Completed 200 OK in 126ms (Views: 91.7ms | ActiveRecord: 2.0ms)
+I, [2014-01-07T14:58:54.580743 #10678]  INFO -- : Started GET "/user/passwd/new" for 172.16.6.120 at 2014-01-07 14:58:54 +0000
+I, [2014-01-07T14:58:54.583872 #10678]  INFO -- : Processing by Devise::PasswordsController#new as HTML
+I, [2014-01-07T14:58:54.595014 #10678]  INFO -- :   Rendered devise/shared/_links.erb (2.0ms)
+I, [2014-01-07T14:58:54.595816 #10678]  INFO -- :   Rendered devise/passwords/new.html.erb within layouts/application (7.1ms)
+I, [2014-01-07T14:58:54.598337 #10678]  INFO -- : Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T14:58:57.332141 #10678]  INFO -- : Started POST "/user/passwd" for 172.16.6.120 at 2014-01-07 14:58:57 +0000
+I, [2014-01-07T14:58:57.335905 #10678]  INFO -- : Processing by Devise::PasswordsController#create as HTML
+I, [2014-01-07T14:58:57.336085 #10678]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"vpg/F8ex7Y1oSkqtBLLpVt5KHdUGOu6gk8P5Ejq31n8=", "user"=>{"email"=>"benjamin.bancroft@gardline.co.uk"}, "commit"=>"Submit"}
+I, [2014-01-07T14:58:58.189332 #10678]  INFO -- :   Rendered devise/mailer/reset_password_instructions.html.erb (1.5ms)
+I, [2014-01-07T14:59:38.541782 #10678]  INFO -- : 
+Sent mail to benjamin.bancroft@gardline.co.uk (40303.9ms)
+I, [2014-01-07T14:59:38.546879 #10678]  INFO -- : Redirected to http://nova.gardline.co.uk/login
+I, [2014-01-07T14:59:38.547245 #10678]  INFO -- : Completed 302 Found in 41211ms (ActiveRecord: 86.3ms)
+I, [2014-01-07T14:59:38.585303 #10678]  INFO -- : Started GET "/login" for 172.16.6.120 at 2014-01-07 14:59:38 +0000
+I, [2014-01-07T14:59:38.588032 #10678]  INFO -- : Processing by Devise::SessionsController#new as HTML
+I, [2014-01-07T14:59:38.594844 #10678]  INFO -- :   Rendered devise/shared/_links.erb (0.5ms)
+I, [2014-01-07T14:59:38.595501 #10678]  INFO -- :   Rendered devise/sessions/new.html.erb within layouts/application (4.6ms)
+I, [2014-01-07T14:59:38.597529 #10678]  INFO -- : Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T14:59:50.218201 #10678]  INFO -- : Started GET "/user/passwd/edit?reset_password_token=[FILTERED]" for 172.16.100.24 at 2014-01-07 14:59:50 +0000
+I, [2014-01-07T14:59:50.220424 #10678]  INFO -- : Processing by Devise::PasswordsController#edit as */*
+I, [2014-01-07T14:59:50.220570 #10678]  INFO -- :   Parameters: {"reset_password_token"=>"[FILTERED]"}
+I, [2014-01-07T14:59:50.238562 #10678]  INFO -- :   Rendered devise/shared/_links.erb (1.7ms)
+I, [2014-01-07T14:59:50.238846 #10678]  INFO -- :   Rendered devise/passwords/edit.html.erb within layouts/application (12.7ms)
+I, [2014-01-07T14:59:50.241292 #10678]  INFO -- : Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T14:59:56.890040 #10678]  INFO -- : Started GET "/user/passwd/edit?reset_password_token=[FILTERED]" for 172.16.100.24 at 2014-01-07 14:59:56 +0000
+I, [2014-01-07T14:59:56.891783 #10678]  INFO -- : Processing by Devise::PasswordsController#edit as */*
+I, [2014-01-07T14:59:56.891958 #10678]  INFO -- :   Parameters: {"reset_password_token"=>"[FILTERED]"}
+I, [2014-01-07T14:59:56.896828 #10678]  INFO -- :   Rendered devise/shared/_links.erb (0.3ms)
+I, [2014-01-07T14:59:56.897048 #10678]  INFO -- :   Rendered devise/passwords/edit.html.erb within layouts/application (2.9ms)
+I, [2014-01-07T14:59:56.898749 #10678]  INFO -- : Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T15:02:06.470647 #10678]  INFO -- : Started GET "/user/passwd/edit?reset_password_token=[FILTERED]" for 172.16.100.24 at 2014-01-07 15:02:06 +0000
+I, [2014-01-07T15:02:06.471965 #10678]  INFO -- : Processing by Devise::PasswordsController#edit as */*
+I, [2014-01-07T15:02:06.472102 #10678]  INFO -- :   Parameters: {"reset_password_token"=>"[FILTERED]"}
+I, [2014-01-07T15:02:06.476021 #10678]  INFO -- :   Rendered devise/shared/_links.erb (0.4ms)
+I, [2014-01-07T15:02:06.476235 #10678]  INFO -- :   Rendered devise/passwords/edit.html.erb within layouts/application (2.4ms)
+I, [2014-01-07T15:02:06.477868 #10678]  INFO -- : Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T15:02:36.837076 #10932]  INFO -- : Started GET "/user/passwd/edit?reset_password_token=[FILTERED]" for 172.16.100.24 at 2014-01-07 15:02:36 +0000
+I, [2014-01-07T15:02:36.934615 #10932]  INFO -- : Processing by Devise::PasswordsController#edit as */*
+I, [2014-01-07T15:02:36.934815 #10932]  INFO -- :   Parameters: {"reset_password_token"=>"[FILTERED]"}
+I, [2014-01-07T15:02:37.089273 #10932]  INFO -- :   Rendered devise/shared/_links.erb (2.1ms)
+I, [2014-01-07T15:02:37.090773 #10932]  INFO -- :   Rendered devise/passwords/edit.html.erb within layouts/application (86.5ms)
+I, [2014-01-07T15:02:37.095152 #10932]  INFO -- : Completed 200 OK in 160ms (Views: 97.8ms | ActiveRecord: 1.6ms)
+I, [2014-01-07T15:03:15.164013 #11100]  INFO -- : Started GET "/user/passwd/edit?reset_password_token=[FILTERED]" for 172.16.100.24 at 2014-01-07 15:03:15 +0000
+I, [2014-01-07T15:03:15.260459 #11100]  INFO -- : Processing by Devise::PasswordsController#edit as */*
+I, [2014-01-07T15:03:15.260639 #11100]  INFO -- :   Parameters: {"reset_password_token"=>"[FILTERED]"}
+I, [2014-01-07T15:03:15.414118 #11100]  INFO -- :   Rendered devise/shared/_links.erb (2.1ms)
+I, [2014-01-07T15:03:15.415637 #11100]  INFO -- :   Rendered devise/passwords/edit.html.erb within layouts/application (86.7ms)
+I, [2014-01-07T15:03:15.419974 #11100]  INFO -- : Completed 200 OK in 159ms (Views: 97.4ms | ActiveRecord: 1.7ms)
+I, [2014-01-07T15:03:20.374531 #11100]  INFO -- : Started GET "/login" for 172.16.100.24 at 2014-01-07 15:03:20 +0000
+I, [2014-01-07T15:03:20.378283 #11100]  INFO -- : Processing by Devise::SessionsController#new as HTML
+I, [2014-01-07T15:03:20.446333 #11100]  INFO -- :   Rendered devise/shared/_links.erb (44.0ms)
+I, [2014-01-07T15:03:20.447155 #11100]  INFO -- :   Rendered devise/sessions/new.html.erb within layouts/application (58.1ms)
+I, [2014-01-07T15:03:20.449515 #11100]  INFO -- : Completed 200 OK in 71ms (Views: 62.7ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T15:03:23.092090 #11100]  INFO -- : Started GET "/course/" for 172.16.100.24 at 2014-01-07 15:03:23 +0000
+I, [2014-01-07T15:03:23.095131 #11100]  INFO -- : Processing by Course::MastersController#index as HTML
+I, [2014-01-07T15:03:23.119845 #11100]  INFO -- :   Rendered course/masters/index.html.erb within layouts/application (19.7ms)
+I, [2014-01-07T15:03:23.122831 #11100]  INFO -- : Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 2.0ms)
+I, [2014-01-07T15:03:23.685659 #11100]  INFO -- : Started GET "/people" for 172.16.100.24 at 2014-01-07 15:03:23 +0000
+I, [2014-01-07T15:03:23.688532 #11100]  INFO -- : Processing by Person::MastersController#index as HTML
+I, [2014-01-07T15:03:23.690634 #11100]  INFO -- : Completed 401 Unauthorized in 2ms
+I, [2014-01-07T15:03:23.701653 #11100]  INFO -- : Started GET "/login" for 172.16.100.24 at 2014-01-07 15:03:23 +0000
+I, [2014-01-07T15:03:23.704341 #11100]  INFO -- : Processing by Devise::SessionsController#new as HTML
+I, [2014-01-07T15:03:23.711297 #11100]  INFO -- :   Rendered devise/shared/_links.erb (0.6ms)
+I, [2014-01-07T15:03:23.712012 #11100]  INFO -- :   Rendered devise/sessions/new.html.erb within layouts/application (4.8ms)
+I, [2014-01-07T15:03:23.713960 #11100]  INFO -- : Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T15:03:28.438206 #11100]  INFO -- : Started GET "/people" for 172.16.100.24 at 2014-01-07 15:03:28 +0000
+I, [2014-01-07T15:03:28.440511 #11100]  INFO -- : Processing by Person::MastersController#index as HTML
+I, [2014-01-07T15:03:28.441655 #11100]  INFO -- : Completed 401 Unauthorized in 1ms
+I, [2014-01-07T15:03:28.449457 #11100]  INFO -- : Started GET "/login" for 172.16.100.24 at 2014-01-07 15:03:28 +0000
+I, [2014-01-07T15:03:28.450709 #11100]  INFO -- : Processing by Devise::SessionsController#new as HTML
+I, [2014-01-07T15:03:28.456014 #11100]  INFO -- :   Rendered devise/shared/_links.erb (0.4ms)
+I, [2014-01-07T15:03:28.456591 #11100]  INFO -- :   Rendered devise/sessions/new.html.erb within layouts/application (3.9ms)
+I, [2014-01-07T15:03:28.458249 #11100]  INFO -- : Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+I, [2014-01-07T15:03:34.626969 #11100]  INFO -- : Started POST "/login" for 172.16.100.24 at 2014-01-07 15:03:34 +0000
+I, [2014-01-07T15:03:34.629134 #11100]  INFO -- : Processing by Devise::SessionsController#create as HTML
+I, [2014-01-07T15:03:34.629299 #11100]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"xXbcS6BLiEdM0fImQnxFk3Og5JxwkaJREk8FXBcuz6U=", "user"=>{"email"=>"benjamin.bancroft@gardline.co.uk", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+I, [2014-01-07T15:03:34.855915 #11100]  INFO -- : Redirected to http://nova.gardline.co.uk/people
+I, [2014-01-07T15:03:34.856319 #11100]  INFO -- : Completed 302 Found in 227ms (ActiveRecord: 60.0ms)
+I, [2014-01-07T15:03:34.863274 #11100]  INFO -- : Started GET "/people" for 172.16.100.24 at 2014-01-07 15:03:34 +0000
+I, [2014-01-07T15:03:34.864933 #11100]  INFO -- : Processing by Person::MastersController#index as HTML
+I, [2014-01-07T15:03:34.965421 #11100]  INFO -- :   Rendered person/masters/_list.html.erb (91.9ms)
+I, [2014-01-07T15:03:34.965662 #11100]  INFO -- :   Rendered person/masters/index.html.erb within layouts/application (94.2ms)
+I, [2014-01-07T15:03:35.020300 #11100]  INFO -- : Completed 200 OK in 155ms (Views: 139.0ms | ActiveRecord: 12.4ms)
+I, [2014-01-07T15:03:47.914503 #11100]  INFO -- : Started GET "/people/1" for 172.16.100.24 at 2014-01-07 15:03:47 +0000
+I, [2014-01-07T15:03:47.916443 #11100]  INFO -- : Processing by Person::MastersController#show as HTML
+I, [2014-01-07T15:03:47.916584 #11100]  INFO -- :   Parameters: {"id"=>"1"}
+I, [2014-01-07T15:03:47.924183 #11100]  INFO -- :   Rendered person/masters/show.html.erb within layouts/application (1.5ms)
+I, [2014-01-07T15:03:47.929133 #11100]  INFO -- : Completed 200 OK in 12ms (Views: 7.3ms | ActiveRecord: 1.1ms)
+I, [2014-01-07T15:03:49.621029 #11100]  INFO -- : Started GET "/people/1/edit" for 172.16.100.24 at 2014-01-07 15:03:49 +0000
+I, [2014-01-07T15:03:49.622914 #11100]  INFO -- : Processing by Person::MastersController#edit as HTML
+I, [2014-01-07T15:03:49.623054 #11100]  INFO -- :   Parameters: {"id"=>"1"}
+I, [2014-01-07T15:03:49.642433 #11100]  INFO -- :   Rendered person/masters/_form.html.erb (10.0ms)
+I, [2014-01-07T15:03:49.643324 #11100]  INFO -- :   Rendered person/masters/edit.html.erb within layouts/application (14.5ms)
+I, [2014-01-07T15:03:49.648138 #11100]  INFO -- : Completed 200 OK in 25ms (Views: 20.0ms | ActiveRecord: 1.1ms)
+I, [2014-01-07T15:03:50.886604 #11100]  INFO -- : Started GET "/people/1" for 172.16.100.24 at 2014-01-07 15:03:50 +0000
+I, [2014-01-07T15:03:50.888323 #11100]  INFO -- : Processing by Person::MastersController#show as HTML
+I, [2014-01-07T15:03:50.888465 #11100]  INFO -- :   Parameters: {"id"=>"1"}
+I, [2014-01-07T15:03:50.893900 #11100]  INFO -- :   Rendered person/masters/show.html.erb within layouts/application (0.4ms)
+I, [2014-01-07T15:03:50.897332 #11100]  INFO -- : Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 1.1ms)
+I, [2014-01-07T15:03:52.164942 #11100]  INFO -- : Started GET "/course/" for 172.16.100.24 at 2014-01-07 15:03:52 +0000
+I, [2014-01-07T15:03:52.167301 #11100]  INFO -- : Processing by Course::MastersController#index as HTML
+I, [2014-01-07T15:03:52.171533 #11100]  INFO -- :   Rendered course/masters/index.html.erb within layouts/application (2.7ms)
+I, [2014-01-07T15:03:52.176703 #11100]  INFO -- : Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 1.3ms)
+I, [2014-01-07T15:03:53.237836 #11100]  INFO -- : Started GET "/course/ccnige" for 172.16.100.24 at 2014-01-07 15:03:53 +0000
+I, [2014-01-07T15:03:53.239242 #11100]  INFO -- : Processing by Course::MastersController#show as HTML
+I, [2014-01-07T15:03:53.239379 #11100]  INFO -- :   Parameters: {"id"=>"ccnige"}
+I, [2014-01-07T15:03:53.362091 #11100]  INFO -- :   Rendered course/events/_list.html.erb (57.4ms)
+I, [2014-01-07T15:03:53.362344 #11100]  INFO -- :   Rendered course/masters/show.html.erb within layouts/application (119.6ms)
+I, [2014-01-07T15:03:53.368297 #11100]  INFO -- : Completed 200 OK in 129ms (Views: 119.8ms | ActiveRecord: 6.9ms)
+I, [2014-01-07T15:03:54.629083 #11100]  INFO -- : Started GET "/course_event/1" for 172.16.100.24 at 2014-01-07 15:03:54 +0000
+I, [2014-01-07T15:03:54.632051 #11100]  INFO -- : Processing by Course::EventsController#show as HTML
+I, [2014-01-07T15:03:54.632192 #11100]  INFO -- :   Parameters: {"id"=>"1"}
+I, [2014-01-07T15:03:54.759736 #11100]  INFO -- :   Rendered course/event_candidates/_list.html.erb (112.9ms)
+I, [2014-01-07T15:03:54.762223 #11100]  INFO -- :   Rendered course/events/_add_candidate.html.erb (1.3ms)
+I, [2014-01-07T15:03:54.762486 #11100]  INFO -- :   Rendered course/events/show.html.erb within layouts/application (122.4ms)
+I, [2014-01-07T15:03:54.769094 #11100]  INFO -- : Completed 200 OK in 137ms (Views: 122.7ms | ActiveRecord: 9.0ms)

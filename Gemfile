@@ -9,6 +9,10 @@ gem 'sqlite3'
 gem 'mysql2'
 gem 'will_paginate', '~> 3.0'
 
+gem 'devise'
+gem 'cancan'
+gem 'rolify'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass-rails', '3.0.0.2'

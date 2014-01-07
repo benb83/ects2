@@ -1,14 +1,35 @@
-<p id="notice"><%= notice %></p>
+<h3>
+  Course Event Candidate
+  <span class="pull-right"><small><%= link_to '<span class="glyphicon glyphicon-pencil"></span>'.html_safe, edit_event_candidate_path(@course_event_candidate.id), { :class => 'btn btn-sm btn-default', :title => "Edit" } %></small></span>
+</h3>
+<hr>
 
-<p>
-  <strong>Course event:</strong>
-  <%= @course_event_candidate.course_event_id %>
-</p>
+<form class="form-horizontal">
+  <div class="form-group">
+    <label class="col-md-2 control-label">Course</label>
+    <div class="col-md-10">
+      <p class="form-control-static"><em><%= @course_event_candidate.event.master.code %></em> <%= @course_event_candidate.event.master.title %></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-2 control-label">Event</label>
+    <div class="col-md-10">
+      <p class="form-control-static"><%= @course_event_candidate.event.start_date.strftime('%A %d %B %Y') %></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-2 control-label">Candidate</label>
+    <div class="col-md-10">
+      <p class="form-control-static"><em><%= @course_event_candidate.candidate.cid %></em> <%= @course_event_candidate.candidate.master.full_name %></p>
+    </div>
+  </div>
+  <% if can? :see_finance, @course_event_candidate %>
+  <div class="form-group">
+    <label class="col-md-2 control-label">Cost</label>
+    <div class="col-md-10">
+      <p class="form-control-static"><em><%= @course_event_candidate.cost_currency.nil? ? "" : @course_event_candidate.cost_currency.short_code << " " %></em><%= number_to_currency @course_event_candidate.cost, unit: "" %></p>
+    </div>
+  </div>
+  <% end %>
 
-<p>
-  <strong>Person candidate:</strong>
-  <%= @course_event_candidate.person_candidate_id %>
-</p>
-
-<%= link_to 'Edit', edit_course_event_candidate_path(@course_event_candidate) %> |
-<%= link_to 'Back', course_event_candidates_path %>
+ </form>

@@ -1,5 +1,6 @@
 class Course::MastersController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   add_breadcrumb "<span class=\"glyphicon glyphicon-home\"></span>".html_safe, :root_path
   add_breadcrumb "Courses", :course_index_path
@@ -13,7 +14,7 @@ class Course::MastersController < ApplicationController
   # GET /course/masters/1
   # GET /course/masters/1.json
   def show
-    add_breadcrumb @course.code, course_path(@course.code.downcase)
+    add_breadcrumb @course.code, course_path(@course.id)
   end
 
   # GET /course/masters/new
@@ -24,8 +25,8 @@ class Course::MastersController < ApplicationController
 
   # GET /course/masters/1/edit
   def edit
-    add_breadcrumb @course.code, course_path(@course.code.downcase)
-    add_breadcrumb "Edit", edit_course_path(@course.code.downcase)
+    add_breadcrumb @course.code, course_path(@course.id)
+    add_breadcrumb "Edit", edit_course_path(@course.id)
   end
 
   # POST /course/masters
@@ -35,7 +36,7 @@ class Course::MastersController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to course_path(@course.code.downcase), notice: 'Course was successfully created.' }
+        format.html { redirect_to course_path(@course.id), notice: 'Course was successfully created.' }
         format.json { render action: 'show', status: :created, location: @course }
       else
         format.html { render action: 'new' }
@@ -49,7 +50,7 @@ class Course::MastersController < ApplicationController
   def update
     respond_to do |format|
       if @course.update(course_params)
-        format.html { redirect_to course_path(@course.code.downcase), notice: 'Course was successfully updated.' }
+        format.html { redirect_to course_path(@course.id), notice: 'Course was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -71,7 +72,7 @@ class Course::MastersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
-      @course = Course::Master.find_by(code: params[:id].upcase)
+      @course = Course::Master.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
