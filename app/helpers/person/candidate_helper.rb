@@ -1,0 +1,2 @@
+module Person::CandidateHelper
+end

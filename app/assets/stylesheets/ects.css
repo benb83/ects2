@@ -191,3 +191,27 @@ hr, h3 {
     padding: 4px 8px;
     height: 30px;
 }
+
+.ui-widget {
+    font: inherit;
+}
+.ui-dialog-content {
+    overflow-x: none;
+}
+
+.ui-tabs {
+    border: none;
+    padding: 0;
+}
+
+.ui-tabs .ui-tabs-nav li a {
+    padding: .2em .5em;
+}
+
+.ui-tabs .ui-tabs-panel {
+    padding: .8em .5em;
+}
+
+.list-group-item {
+    padding: .5em;
+}

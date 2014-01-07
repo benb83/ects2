@@ -44,7 +44,7 @@ class Course::EventsController < ApplicationController
   def update
     respond_to do |format|
       if @course_event.update(course_event_params)
-        format.html { redirect_to @course_event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to event_path(@course_event.id), notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -78,12 +78,12 @@ class Course::EventsController < ApplicationController
       add_breadcrumb "<span class=\"glyphicon glyphicon-home\"></span>".html_safe, :root_path
       add_breadcrumb "Course", :course_index_path    
       add_breadcrumb @course_event.master.code, course_path(@course_event.master.code.downcase)
-      add_breadcrumb "Events", course_event_index_path(@course_event.master.code.downcase)
+#      add_breadcrumb "Events", course_event_index_path(@course_event.master.code.downcase)
       add_breadcrumb @course_event.start_date.strftime('%A %d %B %Y'), event_path(@course_event.id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_event_params
-      params.require(:course_event).permit(:master_id, :start_date, :end_date)
+      params.require(:course_event).permit(:master_id, :start_date, :end_date, :instructor_id)
     end
 end

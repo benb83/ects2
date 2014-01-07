@@ -1,0 +1,33 @@
+<h3>
+  Course Event Candidates
+  <span class="pull-right"><small><%= link_to '<span class="glyphicon glyphicon-plus"></span>'.html_safe, new_event_candidate_path(@course_event.id), { :class => 'btn btn-sm btn-default', :title => "New" } %></small></span>
+</h3>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-condensed table-ects table-bordered">
+      <tbody>
+        <tr class="subtitle">
+          <th style="width: 15%;">Candidate ID</th>
+          <th style="width: 25%;">Family Name</th>
+          <th style="width: 25%;">Given Name</th>
+          <th>Other Names</th>
+        </tr>
+        <% if @course_event_candidates.any? %>
+        <% @course_event_candidates.each do |c| %>
+        <tr class="normal">
+          <td><%= c.candidate.id %></th>
+          <td><%= c.candidate.master.family_name %></td>
+          <td><%= c.candidate.master.given_name %></td>
+          <td><%= c.candidate.master.other_names %></td>
+        </tr>
+        <% end %>
+        <% else %>
+        <tr>
+          <td colspan="3"><span class="text-danger">No course event candidates found.</span></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

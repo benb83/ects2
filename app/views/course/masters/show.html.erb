@@ -51,7 +51,7 @@
         <tr class="normal" data-link="<%= event_path(c.id) %>">
           <td><%= c.start_date.strftime('%A %d %B %Y') %></th>
           <td><%= c.end_date.strftime('%A %d %B %Y') %></td>
-          <td>&nbsp;</td>
+          <td><%= c.instructor.nil? ? "TBC" : c.instructor.master.display_name %></td>
         </tr>
         <% end %>
         <% else %>

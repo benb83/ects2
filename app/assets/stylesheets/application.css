@@ -11,8 +11,7 @@
  *= require_self
  *= require normalize
  *= require twitter/bootstrap
- *= require jquery.ui.datepicker
- *= require jquery.ui.slider
+ *= require jquery.ui.all
  *= require alertify/core
  *= require alertify/default
  *= require alertify/bootstrap

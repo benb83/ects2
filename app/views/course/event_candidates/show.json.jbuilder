@@ -1,1 +1,2 @@
-json.extract! @course_event_candidate, :id, :course_event_id, :person_candidate_id, :created_at, :updated_at
+json.extract! @course_event_candidate, :id, :candidate_id
+json.extract! @course_event_candidate.candidate.master, :family_name, :given_name, :other_names

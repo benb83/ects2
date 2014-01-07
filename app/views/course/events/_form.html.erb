@@ -16,20 +16,26 @@
 
 <%= f.hidden_field :master_id %>
 
-<div class="form-group<%= @course.errors[:code].any? ? ' has-error' : nil %>">
+<div class="form-group<%= @course_event.errors[:start_date].any? ? ' has-error' : nil %>">
   <%= f.label :start_date, { :class => "col-md-2 control-label" } %>
   <div class="col-md-3">
     <input type="text" class="form-control" name="start_date_picker" id="start_date_picker" value="<%= @course_event.start_date.nil? ? "" : @course_event.start_date.strftime('%A %d %B %Y') %>" />
     <%= f.hidden_field :start_date %>
   </div>
 </div>
-<div class="form-group<%= @course.errors[:title].any? ? ' has-error' : nil %>">
+<div class="form-group<%= @course_event.errors[:end_date].any? ? ' has-error' : nil %>">
   <%= f.label :end_date, { :class => "col-md-2 control-label" } %>
   <div class="col-md-3">
     <input type="text" class="form-control" name="end_date_picker" id="end_date_picker" value="<%= @course_event.end_date.nil? ? "" : @course_event.end_date.strftime('%A %d %B %Y') %>" />
     <%= f.hidden_field :end_date %>
   </div>
 </div>
+  <div class="form-group<%= @course_event.errors[:instructor].any? || @course_event.errors[:instructor_id].any? ? ' has-error' : nil %>">
+    <label class="col-sm-2 control-label">Instructor</label>
+    <div class="col-md-3">
+      <%= f.select :instructor_id, content_tag(:option,'TBC',:value=>"")+options_from_collection_for_select( Person::Instructor.all, :id, :id_and_name, @course_event.instructor_id), {}, { :class => "form-control" } %>
+    </div>
+  </div>
 
 <script type="text/javascript">
   $(function() {

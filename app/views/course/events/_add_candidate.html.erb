@@ -1,0 +1,192 @@
+<div id="add-candidate" title="Assign Candidate">
+	<div id="ac-tabs">
+		<ul>
+			<li><a href="#ac-tabs-input">Filter</a></li>
+			<li><a href="#ac-tabs-result">Results</a></li>
+		</ul>
+		<div id="ac-tabs-input">
+		  <form id="candidate" class="form-horizontal">
+				<div class="form-group">
+			    <label class="col-md-3 control-label">Candidate ID</label>
+			    <div class="col-md-4">
+			      <input type="text" class="form-control" name="candidate[candidate_id]" id="candidate_candidate_id">
+			    </div>
+			  </div>
+				<div class="form-group">
+			    <label class="col-md-3 control-label">Family Name</label>
+			    <div class="col-md-9">
+			      <input type="text" class="form-control" name="candidate[family_name]" id="candidate_family_name">
+			    </div>
+			  </div>
+				<div class="form-group">
+			    <label class="col-md-3 control-label">Given Name</label>
+			    <div class="col-md-9">
+			      <input type="text" class="form-control" name="candidate[given_name]" id="candidate_given_name">
+			    </div>
+			  </div>
+				<div class="form-group">
+			    <label class="col-md-3 control-label">Other Name(s)</label>
+			    <div class="col-md-9">
+			      <input type="text" class="form-control" name="candidate[other_names]" id="candidate_other_names">
+			    </div>
+			  </div>
+				<div class="form-group">
+			    <div class="col-md-5">
+			    	<div class="btn-group">
+				      <button id="ac-tabs-input-submit" class="btn btn-primary">Assign</button>
+				      <button id="ac-tabs-input-done" class="btn btn-default">Close</button>
+				    </div>
+			    </div>
+			  </div>
+		  </form>
+	 	</div>
+	  <div id="ac-tabs-result">
+
+	  </div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function() {
+		var
+			ac_name_input = [
+				$("#candidate_family_name"),
+				$("#candidate_given_name"),
+				$("#candidate_other_names")
+			],
+			ac_id_input = [
+				$("#candidate_candidate_id")
+			];
+
+		function empty_inputs(e) {
+			var empty = true;
+			$(e).each(function() {
+				if($.trim($(this).val()).length !== 0) {
+					empty = false;
+				}
+			})
+			return empty;
+		}
+
+		function disable_inputs(e) {
+			$(e).each(function() {
+				$(this).attr({ disabled: "Disabled" });
+			});
+		}
+
+		function enable_inputs(e) {
+			$(e).each(function() {
+				$(this).attr({ disabled: null });
+			});
+		}
+
+		function add_event_candidate(e, c) {
+			$.ajax({
+				type: "POST",
+				url: '<%= event_candidates_path %>',
+				data: {
+					course_event_candidate: {
+						event_id: e,
+						candidate_id: c
+					}
+				},
+				dataType: 'json'
+			}).done(function(data) {
+				add_candidates_row(data);
+			}).error(function(jqXHR, textStatus, errorThrown) {
+				alert("Unable to assign candidate, check candidate is not already assigned to this event.");
+			});
+		}
+
+		function add_candidates_row(e) {
+			$("#event_candidates tr.no_candidates").remove();
+			var tr = $("<tr>");
+			tr.append($("<td>").text(e.candidate_id));
+			tr.append($("<td>").text(e.family_name));
+			tr.append($("<td>").text(e.given_name));
+			tr.append($("<td>").text(e.other_names));
+			tr.append($("<td>").attr({ style: "text-align: center;"}).append("<a href=\"/course_event_candidates/" + e.id + "\" rel=\"nofollow\" data-method=\"delete\" data-confirm=\"Are you sure?\"><span class=\"glyphicon glyphicon-remove\"></span></a>"));
+			$("#event_candidates > tbody").append(tr);
+		}
+
+		function show_search_results(e, c) {
+			var newtbody = $("<ul>").attr({ class: "list-group" });
+			for(var i = 0; i < c.length; i++) {
+				
+				(function() {
+					var row = c[i];
+					newtbody.append(
+						$("<li>")
+							.attr({ class: "list-group-item" })
+							.append(
+								$("<a href=\"#\">").html("<strong>" + row.id + "</strong>: " + row.family_name + ", " + row.given_name + " " + row.other_names)
+									.click(function(event) {
+										event.preventDefault();
+										add_event_candidate(e, row.id)
+									})
+							)
+					);
+				}(c,i));
+			}
+
+			$("#ac-tabs-result").html(newtbody);
+			$("#ac-tabs").tabs( "option", "active", 1 );
+		}
+
+		$("#ac-tabs").tabs();
+
+		$("#add-candidate").dialog({
+			autoOpen: false,
+			modal: true,
+			height: 330,
+			width: 600
+		});
+
+		$("#add-candidate-cmd").click(function() {
+			$("#add-candidate").dialog("open");
+		});
+
+		$("input[name*='candidate[']").keyup(function() {
+			if(empty_inputs(ac_id_input) && empty_inputs(ac_name_input)) {
+				enable_inputs(ac_name_input);
+				enable_inputs(ac_id_input);
+			} else if(!empty_inputs(ac_id_input)) {
+				disable_inputs(ac_name_input);
+			} else if(!empty_inputs(ac_name_input)) {
+				disable_inputs(ac_id_input);
+			} else {
+				alert("Oops!");
+			}
+		});
+
+		$("#ac-tabs-input-submit").click(function(event) {
+			event.preventDefault();
+			$.ajax({
+				url: '<%= candidate_search_path %>',
+				data: {
+					candidate: {
+						candidate_id: $("#candidate_candidate_id").val(),
+						family_name: $("#candidate_family_name").val(),
+						given_name: $("#candidate_given_name").val(),
+						other_names: $("#candidate_other_names").val()
+					}
+				},
+				dataType: 'json',
+				cache: false
+			}).done(function(data) {
+				if(data.length < 1) {
+					alert("No candidates found");
+				} else if(data.length == 1) {
+					add_event_candidate(<%= params[:id] %>, data[0].id);
+				} else {
+					show_search_results(<%= params[:id] %>, data);
+				}
+			})
+		});
+
+		$("#ac-tabs-input-done").click(function(event) {
+			$("#add-candidate").dialog("close");
+		});
+
+	});
+</script>

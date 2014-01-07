@@ -13,8 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require twitter/bootstrap
 //= require jquery.ui.datepicker
 //= require jquery.ui.slider
-//= require twitter/bootstrap
+//= require jquery.ui.dialog
+//= require jquery.ui.tabs
 //= require alertify
 //= require_tree .

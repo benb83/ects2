@@ -1,3 +1,4 @@
+<% if false %>
 <%= form_for(@course_event_candidate) do |f| %>
   <% if @course_event_candidate.errors.any? %>
     <div id="error_explanation">
@@ -22,4 +23,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+<% end %>
 <% end %>

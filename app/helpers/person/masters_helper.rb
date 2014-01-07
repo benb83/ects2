@@ -1,0 +1,2 @@
+module Person::MastersHelper
+end

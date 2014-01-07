@@ -1,0 +1,75 @@
+<% if @person.errors.any? %>
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <%= pluralize(@person.errors.count, "error") %> prohibited this person from being created:
+    </div>
+    <div class="panel-body">
+      <ul style="margin-bottom: 0;">
+      <% @person.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<div class="form-group<%= @person.errors[:family_name].any? ? ' has-error' : nil %>">
+  <%= f.label :family_name, { :class => "col-md-2 control-label" } %>
+  <div class="col-md-6">
+    <%= f.text_field :family_name, { :class => "form-control" } %>
+  </div>
+</div>
+<div class="form-group<%= @person.errors[:given_name].any? ? ' has-error' : nil %>">
+  <%= f.label :given_name, { :class => "col-md-2 control-label" } %>
+  <div class="col-md-6">
+    <%= f.text_field :given_name, { :class => "form-control" } %>
+  </div>
+</div>
+<div class="form-group<%= @person.errors[:other_names].any? ? ' has-error' : nil %>">
+  <%= f.label :other_names, { :class => "col-md-2 control-label" } %>
+  <div class="col-md-6">
+    <%= f.text_field :other_names, { :class => "form-control" } %>
+  </div>
+</div>
+<div class="form-group<%= @person.errors[:sex].any? ? ' has-error' : nil %>">
+  <%= f.label :sex, { :class => "col-md-2 control-label" } %>
+  <div class="col-md-1">
+    <%= f.select :sex, [['M', 'M'], ['F', 'F']], {}, { :class => "form-control" } %>
+  </div>
+</div>
+<div class="form-group<%= @person.errors[:dob].any? ? ' has-error' : nil %>">
+  <%= f.label :dob, 'D.O.B.', { :class => "col-md-2 control-label" } %>
+  <div class="col-md-3">
+    <input type="text" class="form-control" name="dob_picker" id="dob_picker" value="<%= @person.dob.nil? ? "" : @person.dob.strftime('%d/%m/%Y') %>" />
+    <%= f.hidden_field :dob %>
+  </div>
+</div>
+<% if params[:action] == 'new' || params[:action] == 'create' %>
+<div class="form-group">
+  <label for="person_master_options" class="col-md-2 control-label">Options</label>
+  <div class="col-md-6">
+    <div class="radio">
+      <label>
+        <input type="radio" name="person_master_options" value="candidate" checked> Candidate
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="person_master_options" value="instructor"> Instructor
+      </label>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<script type="text/javascript">
+  $(function() {
+    $("#dob_picker").datepicker({
+      dateFormat: "dd/mm/yy",
+      altField: "#person_master_dob",
+      altFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true
+    });
+  });
+</script>

@@ -35,7 +35,7 @@ class Course::MastersController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to course_path(@course), notice: 'Course was successfully created.' }
+        format.html { redirect_to course_path(@course.code.downcase), notice: 'Course was successfully created.' }
         format.json { render action: 'show', status: :created, location: @course }
       else
         format.html { render action: 'new' }
